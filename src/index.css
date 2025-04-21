@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 210 70% 59%;
+    --primary-light: 210 85% 89%;
+    --secondary: 218 41% 45%;
+    --accent: 12 89% 59%;
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --success: 142 72% 29%;
+    --warning: 38 92% 50%;
+    --error: 0 84% 60%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+  }
+}
+
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl sm:text-4xl leading-tight;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl leading-tight;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl leading-snug;
+  }
+}
+
+@layer components {
+  .container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-secondary
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 h-10 py-2 px-4;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90 h-10 py-2 px-4;
+  }
+  
+  .btn-outline {
+    @apply border border-border bg-transparent hover:bg-muted h-10 py-2 px-4;
+  }
+
+  .card {
+    @apply bg-card rounded-lg border border-border shadow-sm;
+  }
+  
+  .input {
+    @apply flex h-10 w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm
+           placeholder:text-muted-foreground focus-visible:outline-none
+           focus-visible:ring-1 focus-visible:ring-secondary disabled:cursor-not-allowed disabled:opacity-50;
+  }
+}
